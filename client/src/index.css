@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: #fafaf8;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.queue-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #e5e5e0;
+}
+
+.queue-item:first-child {
+  border-top: 1px solid #e5e5e0;
+}
+
+.topic-name {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.topic-meta {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+.score-badge {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #b8542f;
+}
+
+form {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e5e0;
+}
+
+form label {
+  display: block;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #d5d5d0;
+  background: #fff;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.95rem;
+}
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+}
