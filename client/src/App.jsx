@@ -1,29 +1,46 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import Revision from "./components/RevisionQueue";
-import AttemptForm from "./components/AttemptForm";
-import Explanation from "./components/Explanation";
-import Streak from "./components/Streak";
-import BulkImport from "./components/BulkImport";
+import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
+import QuizPage from "./pages/QuizPage";
+import ReviewPage from "./pages/ReviewPage";
+import ImportPage from "./pages/ImportPage";
+
 function App() {
   const [refreshKey, setRefreshKey] = useState(0);
 
-  const handleAttemptLogged = () => {
+  const handleUpdate = () => {
     setRefreshKey((prev) => prev + 1);
   };
 
   return (
-    <div className="container">
-      <h1>DSA revision tracker</h1>
-      <p className="subtitle">
-        Weighted revision priority, based on your solve history.
-      </p>
-      <Streak refreshKey={refreshKey} />
-      <Revision key={refreshKey} />
-      <Explanation refreshKey={refreshKey} />
-      <AttemptForm onAttemptLogged={handleAttemptLogged} />
-      <BulkImport onImported={handleAttemptLogged} />
-    </div>
+    <BrowserRouter>
+      <div className="container">
+        <h1>DSA revision tracker</h1>
+        <p className="subtitle">
+          Weighted revision priority, based on your solve history.
+        </p>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Dashboard
+                refreshKey={refreshKey}
+                onAttemptLogged={handleUpdate}
+              />
+            }
+          />
+          <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/review" element={<ReviewPage />} />
+          <Route
+            path="/import"
+            element={<ImportPage onImported={handleUpdate} />}
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

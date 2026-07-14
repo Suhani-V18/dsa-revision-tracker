@@ -1,0 +1,167 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1783928585.7901957,
+    "ast_hash": "aade39b1900bfcd052c852bbea043d00",
+    "semantic_hash": "aade39b1900bfcd052c852bbea043d00"
+  },
+  "client/.oxlintrc.json": {
+    "mtime": 1783099082.5680883,
+    "ast_hash": "5e6e3cea3e89137071c142dd7835b0ef",
+    "semantic_hash": "5e6e3cea3e89137071c142dd7835b0ef"
+  },
+  "client/package.json": {
+    "mtime": 1783660931.48639,
+    "ast_hash": "43a53a3e29d306e3d872958d4a587d4b",
+    "semantic_hash": "43a53a3e29d306e3d872958d4a587d4b"
+  },
+  "client/src/App.jsx": {
+    "mtime": 1783662109.1759422,
+    "ast_hash": "83254b1c2fe41098e3cf5c1826d5fa35",
+    "semantic_hash": "83254b1c2fe41098e3cf5c1826d5fa35"
+  },
+  "client/src/api/api.js": {
+    "mtime": 1783673021.3216765,
+    "ast_hash": "86d640942ffc6f71a2b030bd56df431e",
+    "semantic_hash": "86d640942ffc6f71a2b030bd56df431e"
+  },
+  "client/src/components/AttemptForm.jsx": {
+    "mtime": 1783672528.8883889,
+    "ast_hash": "227a4245662a3049f470b208b43a2441",
+    "semantic_hash": "227a4245662a3049f470b208b43a2441"
+  },
+  "client/src/components/BulkImport.jsx": {
+    "mtime": 1783593511.0685601,
+    "ast_hash": "65d0a43e3bcc8c753313036f26af99da",
+    "semantic_hash": "65d0a43e3bcc8c753313036f26af99da"
+  },
+  "client/src/components/CodeReview.jsx": {
+    "mtime": 1783675561.9097204,
+    "ast_hash": "0d28a4329151a12746cc8494d007b876",
+    "semantic_hash": "0d28a4329151a12746cc8494d007b876"
+  },
+  "client/src/components/Explanation.jsx": {
+    "mtime": 1783582899.4097044,
+    "ast_hash": "d570b4b164c10dabb1e8547f12df9e22",
+    "semantic_hash": "d570b4b164c10dabb1e8547f12df9e22"
+  },
+  "client/src/components/Navbar.jsx": {
+    "mtime": 1783673686.9099572,
+    "ast_hash": "654e35993e33a0dd8d41e0803b76e81d",
+    "semantic_hash": "654e35993e33a0dd8d41e0803b76e81d"
+  },
+  "client/src/components/Quiz.jsx": {
+    "mtime": 1783600720.1771605,
+    "ast_hash": "5294ee0aef42328dc47d1cf437cb5121",
+    "semantic_hash": "5294ee0aef42328dc47d1cf437cb5121"
+  },
+  "client/src/components/ReadinessScore.jsx": {
+    "mtime": 1783673039.9102595,
+    "ast_hash": "047c1f793af5afba4cf94b89f30351a1",
+    "semantic_hash": "047c1f793af5afba4cf94b89f30351a1"
+  },
+  "client/src/components/RevisionQueue.jsx": {
+    "mtime": 1783596878.7744126,
+    "ast_hash": "3053547ef37bc9e18a0857ccca0c65d8",
+    "semantic_hash": "3053547ef37bc9e18a0857ccca0c65d8"
+  },
+  "client/src/components/Streak.jsx": {
+    "mtime": 1783585046.9293382,
+    "ast_hash": "3ada235456bbd46a2e858d5157c376c2",
+    "semantic_hash": "3ada235456bbd46a2e858d5157c376c2"
+  },
+  "client/src/main.jsx": {
+    "mtime": 1783099082.670638,
+    "ast_hash": "e13723e2574429d9a6d849727e3ff695",
+    "semantic_hash": "e13723e2574429d9a6d849727e3ff695"
+  },
+  "client/src/pages/Dashboard.jsx": {
+    "mtime": 1783673093.2829163,
+    "ast_hash": "0cabf514d6ee89aea26dc642d1e411a6",
+    "semantic_hash": "0cabf514d6ee89aea26dc642d1e411a6"
+  },
+  "client/src/pages/ImportPage.jsx": {
+    "mtime": 1783662058.6994047,
+    "ast_hash": "aacdab73c3a4bf72f9069e65a7bf8013",
+    "semantic_hash": "aacdab73c3a4bf72f9069e65a7bf8013"
+  },
+  "client/src/pages/QuizPage.jsx": {
+    "mtime": 1783662006.0628772,
+    "ast_hash": "2f0bb417d5699a3f1e232d4a2853ecdb",
+    "semantic_hash": "2f0bb417d5699a3f1e232d4a2853ecdb"
+  },
+  "client/src/pages/ReviewPage.jsx": {
+    "mtime": 1783662021.815384,
+    "ast_hash": "75ea9b89efa3561763adcdc3be1965d8",
+    "semantic_hash": "75ea9b89efa3561763adcdc3be1965d8"
+  },
+  "client/vite.config.js": {
+    "mtime": 1783099082.5600142,
+    "ast_hash": "88439104b3c207f17d33ef3160e3b080",
+    "semantic_hash": "88439104b3c207f17d33ef3160e3b080"
+  },
+  "server/models/Attempt.js": {
+    "mtime": 1783513000.63244,
+    "ast_hash": "3fc4d943c06c0ae2682b7e31331267bb",
+    "semantic_hash": "3fc4d943c06c0ae2682b7e31331267bb"
+  },
+  "server/models/Problem.js": {
+    "mtime": 1783529813.7567031,
+    "ast_hash": "20a8a528b825a251618416f1ff3e4286",
+    "semantic_hash": "20a8a528b825a251618416f1ff3e4286"
+  },
+  "server/models/User.js": {
+    "mtime": 1783583094.7716,
+    "ast_hash": "d089c107f7ef1cb631dc5707433146f0",
+    "semantic_hash": "d089c107f7ef1cb631dc5707433146f0"
+  },
+  "server/package.json": {
+    "mtime": 1783583061.0570006,
+    "ast_hash": "2ddd13ad2b54f51184628c231e224b48",
+    "semantic_hash": "2ddd13ad2b54f51184628c231e224b48"
+  },
+  "server/routes/attempts.js": {
+    "mtime": 1783674945.0502677,
+    "ast_hash": "c42f49d3232233dd795dbcd5f7af682c",
+    "semantic_hash": "c42f49d3232233dd795dbcd5f7af682c"
+  },
+  "server/routes/auth.js": {
+    "mtime": 1783583121.1264493,
+    "ast_hash": "ac97a68899ec60c2cbaea691f48d8256",
+    "semantic_hash": "ac97a68899ec60c2cbaea691f48d8256"
+  },
+  "server/routes/problems.js": {
+    "mtime": 1783591275.410179,
+    "ast_hash": "6e782738d56d22e73343a03047a3df86",
+    "semantic_hash": "6e782738d56d22e73343a03047a3df86"
+  },
+  "server/server.js": {
+    "mtime": 1783583757.168994,
+    "ast_hash": "81148e2f5e0c587b1182415629c2327e",
+    "semantic_hash": "81148e2f5e0c587b1182415629c2327e"
+  },
+  "server/utils/explainRecommendation.js": {
+    "mtime": 1783581817.9109497,
+    "ast_hash": "92746aa9c14d2d9d1050830528420aee",
+    "semantic_hash": "92746aa9c14d2d9d1050830528420aee"
+  },
+  "server/utils/explainWeakness.js": {
+    "mtime": 1783662913.051678,
+    "ast_hash": "956472cdd2860ff6b2facbfbe73b5ce8",
+    "semantic_hash": "956472cdd2860ff6b2facbfbe73b5ce8"
+  },
+  "server/utils/generateQuiz.js": {
+    "mtime": 1783600512.2741988,
+    "ast_hash": "5f9c7fe77c16c6d9ca24ef761d587336",
+    "semantic_hash": "5f9c7fe77c16c6d9ca24ef761d587336"
+  },
+  "server/utils/reviewCode.js": {
+    "mtime": 1783674669.9110126,
+    "ast_hash": "fec5cc24fb7523d723bd8f1fe3f08798",
+    "semantic_hash": "fec5cc24fb7523d723bd8f1fe3f08798"
+  },
+  "server/utils/scoringEngine.js": {
+    "mtime": 1783673220.0020301,
+    "ast_hash": "8d5cedc4ecf6468bc043a5f2256073b5",
+    "semantic_hash": "8d5cedc4ecf6468bc043a5f2256073b5"
+  }
+}

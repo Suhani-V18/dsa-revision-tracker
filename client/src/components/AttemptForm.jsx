@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createProblem, createAttempt } from "../api/api";
+import { createProblem, createAttempt, getSimilarProblems } from "../api/api";
 
 function AttemptForm({ onAttemptLogged }) {
   const [title, setTitle] = useState("");
@@ -11,6 +11,8 @@ function AttemptForm({ onAttemptLogged }) {
   const [hintsUsed, setHintsUsed] = useState(0);
   const [solvedIndependently, setSolvedIndependently] = useState(true);
   const [confidenceRating, setConfidenceRating] = useState(3);
+  const [suggestions, setSuggestions] = useState([]);
+  const [weaknessFeedback, setWeaknessFeedback] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,13 +27,22 @@ function AttemptForm({ onAttemptLogged }) {
 
       const newProblemId = problemRes.data._id;
 
-      await createAttempt({
+      const attemptRes = await createAttempt({
         problemId: newProblemId,
         timeTakenMinutes: Number(timeTakenMinutes),
         hintsUsed: Number(hintsUsed),
         solvedIndependently,
         confidenceRating: Number(confidenceRating),
       });
+
+      if (Number(hintsUsed) >= 2) {
+        const simRes = await getSimilarProblems(topic, newProblemId);
+        setSuggestions(simRes.data);
+        setWeaknessFeedback(attemptRes.data.conceptualFeedback || "");
+      } else {
+        setSuggestions([]);
+        setWeaknessFeedback("");
+      }
 
       setTitle("");
       setTopic("");
@@ -128,6 +139,68 @@ function AttemptForm({ onAttemptLogged }) {
       />
 
       <button type="submit">Log attempt</button>
+
+      {weaknessFeedback && (
+        <div
+          style={{
+            marginTop: "1rem",
+            padding: "1rem",
+            background: "#f6efe8",
+            borderLeft: "3px solid #966b1f",
+            fontFamily: "Helvetica Neue, sans-serif",
+            fontSize: "0.85rem",
+            color: "#444",
+            lineHeight: "1.5",
+          }}
+        >
+          {weaknessFeedback}
+        </div>
+      )}
+
+      {suggestions.length > 0 && (
+        <div
+          style={{
+            marginTop: "1rem",
+            padding: "1rem",
+            background: "#faf6f0",
+            borderLeft: "3px solid #b8542f",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "Helvetica Neue, sans-serif",
+              fontSize: "0.85rem",
+              color: "#444",
+              marginBottom: "0.5rem",
+            }}
+          >
+            You used several hints — try these similar problems:
+          </p>
+          {suggestions.map((p) => (
+            <div
+              key={p._id}
+              style={{
+                fontFamily: "Helvetica Neue, sans-serif",
+                fontSize: "0.85rem",
+                marginBottom: "0.3rem",
+              }}
+            >
+              {p.link ? (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#b8542f" }}
+                >
+                  {p.title}
+                </a>
+              ) : (
+                p.title
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </form>
   );
 }

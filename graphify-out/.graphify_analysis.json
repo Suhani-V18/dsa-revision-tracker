@@ -1,0 +1,297 @@
+{
+  "communities": {
+    "0": [
+      "google_generative_ai",
+      "server_models_attempt",
+      "server_models_attempt_attempt",
+      "server_models_attempt_attemptschema",
+      "server_package_dependencies_google_generative_ai",
+      "server_routes_attempts",
+      "server_utils_explainrecommendation",
+      "server_utils_explainrecommendation_explainrecommendation",
+      "server_utils_explainrecommendation_genai",
+      "server_utils_explainweakness",
+      "server_utils_explainweakness_explainweakness",
+      "server_utils_explainweakness_genai",
+      "server_utils_generatequiz",
+      "server_utils_generatequiz_genai",
+      "server_utils_generatequiz_generatequiz",
+      "server_utils_reviewcode",
+      "server_utils_reviewcode_genai",
+      "server_utils_reviewcode_reviewcode",
+      "server_utils_scoringengine",
+      "server_utils_scoringengine_calculatereadinessscore",
+      "server_utils_scoringengine_calculatestreak",
+      "server_utils_scoringengine_calculatetopicscores",
+      "server_utils_scoringengine_dayssince",
+      "server_utils_scoringengine_getmasterylevel"
+    ],
+    "1": [
+      "client_src_api_api",
+      "client_src_api_api_createattempt",
+      "client_src_api_api_createproblem",
+      "client_src_api_api_getproblems",
+      "client_src_api_api_getreadiness",
+      "client_src_api_api_getscores",
+      "client_src_api_api_getsimilarproblems",
+      "client_src_api_api_getstreak",
+      "client_src_api_api_markreviewed",
+      "client_src_api_api_reviewcode",
+      "client_src_components_attemptform",
+      "client_src_components_attemptform_attemptform",
+      "client_src_components_codereview",
+      "client_src_components_explanation",
+      "client_src_components_explanation_explanation",
+      "client_src_components_readinessscore",
+      "client_src_components_readinessscore_readinessscore",
+      "client_src_components_revisionqueue",
+      "client_src_components_revisionqueue_revisionqueue",
+      "client_src_components_streak",
+      "client_src_components_streak_streak",
+      "client_src_pages_dashboard"
+    ],
+    "2": [
+      "client_oxlintrc_plugins",
+      "client_src_api_api_bulkimportproblems",
+      "client_src_api_api_getquiz",
+      "client_src_app",
+      "client_src_app_app",
+      "client_src_components_bulkimport",
+      "client_src_components_bulkimport_bulkimport",
+      "client_src_components_navbar",
+      "client_src_components_navbar_navbar",
+      "client_src_components_quiz",
+      "client_src_components_quiz_quiz",
+      "client_src_main",
+      "client_src_pages_dashboard_dashboard",
+      "client_src_pages_importpage",
+      "client_src_pages_importpage_importpage",
+      "client_src_pages_quizpage",
+      "client_src_pages_quizpage_quizpage",
+      "client_src_pages_reviewpage",
+      "client_src_pages_reviewpage_reviewpage",
+      "ref_oxc",
+      "ref_react"
+    ],
+    "3": [
+      "axios",
+      "client_package_dependencies",
+      "client_package_dependencies_axios",
+      "client_package_dependencies_papaparse",
+      "client_package_dependencies_react",
+      "client_package_dependencies_react_dom",
+      "client_package_dependencies_react_router_dom",
+      "client_package_dependencies_recharts",
+      "papaparse",
+      "react",
+      "react_dom",
+      "react_router_dom",
+      "recharts"
+    ],
+    "4": [
+      "bcrypt",
+      "cors",
+      "dotenv",
+      "express",
+      "jsonwebtoken",
+      "mongoose",
+      "server_package_dependencies",
+      "server_package_dependencies_bcrypt",
+      "server_package_dependencies_cors",
+      "server_package_dependencies_dotenv",
+      "server_package_dependencies_express",
+      "server_package_dependencies_jsonwebtoken",
+      "server_package_dependencies_mongoose"
+    ],
+    "5": [
+      "server_models_problem",
+      "server_models_problem_problem",
+      "server_models_problem_problemschema",
+      "server_models_user",
+      "server_models_user_user",
+      "server_models_user_userschema",
+      "server_routes_attempts_router",
+      "server_routes_auth",
+      "server_routes_auth_router",
+      "server_routes_problems",
+      "server_routes_problems_router",
+      "server_server",
+      "server_server_app"
+    ],
+    "6": [
+      "client_package_devdependencies",
+      "client_package_devdependencies_oxlint",
+      "client_package_devdependencies_types_react",
+      "client_package_devdependencies_types_react_dom",
+      "client_package_devdependencies_vite",
+      "client_package_devdependencies_vitejs_plugin_react",
+      "oxlint",
+      "types_react",
+      "types_react_dom",
+      "vite",
+      "vitejs_plugin_react"
+    ],
+    "7": [
+      "server_package",
+      "server_package_author",
+      "server_package_description",
+      "server_package_keywords",
+      "server_package_license",
+      "server_package_main",
+      "server_package_name",
+      "server_package_scripts",
+      "server_package_scripts_test",
+      "server_package_type",
+      "server_package_version"
+    ],
+    "8": [
+      "client_package",
+      "client_package_name",
+      "client_package_private",
+      "client_package_scripts",
+      "client_package_scripts_build",
+      "client_package_scripts_dev",
+      "client_package_scripts_lint",
+      "client_package_scripts_preview",
+      "client_package_type",
+      "client_package_version"
+    ],
+    "9": [
+      "client_oxlintrc",
+      "client_oxlintrc_rules",
+      "client_oxlintrc_rules_react_only_export_components",
+      "client_oxlintrc_rules_react_rules_of_hooks",
+      "client_oxlintrc_schema",
+      "ref_warn"
+    ],
+    "10": [
+      "client_vite_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.13405797101449277,
+    "1": 0.19047619047619047,
+    "2": 0.1523809523809524,
+    "3": 0.15384615384615385,
+    "4": 0.15384615384615385,
+    "5": 0.20512820512820512,
+    "6": 0.18181818181818182,
+    "7": 0.18181818181818182,
+    "8": 0.2,
+    "9": 0.3333333333333333,
+    "10": 1.0
+  },
+  "gods": [
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 11
+    },
+    {
+      "id": "server_package_dependencies_google_generative_ai",
+      "label": "@google/generative-ai",
+      "degree": 6
+    },
+    {
+      "id": "client_package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "client_src_components_attemptform_attemptform",
+      "label": "AttemptForm()",
+      "degree": 5
+    },
+    {
+      "id": "client_src_components_revisionqueue_revisionqueue",
+      "label": "RevisionQueue()",
+      "degree": 4
+    },
+    {
+      "id": "server_utils_scoringengine_calculatetopicscores",
+      "label": "calculateTopicScores()",
+      "degree": 4
+    },
+    {
+      "id": "client_oxlintrc_plugins",
+      "label": "plugins",
+      "degree": 3
+    },
+    {
+      "id": "client_oxlintrc_rules",
+      "label": "rules",
+      "degree": 3
+    },
+    {
+      "id": "client_src_api_api_createattempt",
+      "label": "createAttempt()",
+      "degree": 3
+    },
+    {
+      "id": "client_src_api_api_getscores",
+      "label": "getScores()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "AttemptForm()",
+      "target": "createAttempt()",
+      "source_files": [
+        "client/src/components/AttemptForm.jsx",
+        "client/src/api/api.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "RevisionQueue()",
+      "target": "getScores()",
+      "source_files": [
+        "client/src/components/RevisionQueue.jsx",
+        "client/src/api/api.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "AttemptForm()",
+      "target": "createProblem()",
+      "source_files": [
+        "client/src/components/AttemptForm.jsx",
+        "client/src/api/api.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "RevisionQueue()",
+      "target": "markReviewed()",
+      "source_files": [
+        "client/src/components/RevisionQueue.jsx",
+        "client/src/api/api.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "Streak()",
+      "target": "getStreak()",
+      "source_files": [
+        "client/src/components/Streak.jsx",
+        "client/src/api/api.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

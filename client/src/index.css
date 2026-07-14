@@ -6,98 +6,165 @@
 
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
-  background: #fafaf8;
+  background: #faf9f6;
   color: #1a1a1a;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 4rem 1.5rem 6rem;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 400;
   letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
+  color: #14140f;
 }
 
 .subtitle {
-  color: #666;
-  font-size: 0.95rem;
+  color: #7a7a72;
+  font-size: 0.92rem;
   margin-bottom: 2.5rem;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+nav {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 2.75rem;
+  padding-bottom: 0;
+  border-bottom: 1px solid #e8e6df;
+}
+
+nav a {
+  padding: 0.6rem 0.9rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.83rem;
+  letter-spacing: 0.02em;
+  transition: color 0.15s ease;
+}
+
+
+.section-label {
+  display: block;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a3a196;
+  margin-bottom: 1rem;
 }
 
 .queue-item {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid #e5e5e0;
+  align-items: flex-start;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid #ece9e1;
+  transition: background 0.15s ease;
 }
 
 .queue-item:first-child {
-  border-top: 1px solid #e5e5e0;
+  border-top: 1px solid #ece9e1;
 }
 
 .topic-name {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 500;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .topic-meta {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.8rem;
-  color: #888;
-  margin-top: 0.25rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.78rem;
+  color: #9a988d;
+  margin-top: 0.35rem;
+  letter-spacing: 0.01em;
 }
 
 .score-badge {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.85rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #b8542f;
+  color: #a8532e;
+  min-width: 2.2rem;
+  text-align: right;
 }
 
 form {
   margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e5e5e0;
+  padding-top: 2.25rem;
+  border-top: 1px solid #e8e6df;
 }
 
 form label {
   display: block;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 1rem;
-  margin-bottom: 0.3rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #9a988d;
+  margin-top: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+form label:first-of-type {
+  margin-top: 0;
 }
 
 form input,
-form select {
+form select,
+form textarea {
   width: 100%;
-  padding: 0.6rem;
-  border: 1px solid #d5d5d0;
-  background: #fff;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.95rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #dcd9cf;
+  background: #ffffff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.92rem;
+  color: #1a1a1a;
+  border-radius: 2px;
+  transition: border-color 0.15s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #a8532e;
 }
 
 button {
-  margin-top: 1.5rem;
-  padding: 0.7rem 1.5rem;
+  margin-top: 1.75rem;
+  padding: 0.75rem 1.6rem;
   background: #1a1a1a;
   color: #fff;
   border: none;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 0.9rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
   cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.15s ease;
 }
 
 button:hover {
-  background: #333;
+  background: #3a3a3a;
+}
+
+button:disabled {
+  background: #c7c5ba;
+  cursor: not-allowed;
+}
+
+::selection {
+  background: #f0e2d5;
 }

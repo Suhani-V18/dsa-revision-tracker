@@ -11,3 +11,13 @@ export const markReviewed = (topic) =>
 export const getStreak = () => axios.get(`${API_BASE}/attempts/streak`);
 export const bulkImportProblems = (problems) =>
   axios.post(`${API_BASE}/problems/bulk`, { problems });
+export const reviewCode = (data) =>
+  axios.post(`${API_BASE}/attempts/review-code`, data);
+export const getQuiz = () => axios.get(`${API_BASE}/attempts/quiz`);
+export const getSimilarProblems = (topic, excludeId) =>
+  axios.get(`${API_BASE}/attempts/similar/${topic}/${excludeId}`);
+export const getReadiness = () => axios.get(`${API_BASE}/attempts/readiness`);
+export const getTodayCount = () =>
+  axios.get(`${API_BASE}/attempts/today-count`);
+export const getStreakDetailed = (target) =>
+  axios.get(`${API_BASE}/attempts/streak-detailed?target=${target}`);

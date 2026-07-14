@@ -31,7 +31,33 @@ function RevisionQueue() {
       {scores.map((s) => (
         <div className="queue-item" key={s.topic}>
           <div>
-            <div className="topic-name">{s.topic}</div>
+            <div className="topic-name">
+              {s.topic}
+              <span
+                style={{
+                  marginLeft: "10px",
+                  fontSize: "0.7rem",
+                  fontFamily: "Helvetica Neue, sans-serif",
+                  fontWeight: 600,
+                  padding: "2px 8px",
+                  borderRadius: "3px",
+                  color:
+                    s.masteryLevel === "Strong"
+                      ? "#2d6a4f"
+                      : s.masteryLevel === "Intermediate"
+                      ? "#966b1f"
+                      : "#a13d2c",
+                  background:
+                    s.masteryLevel === "Strong"
+                      ? "#e6f2ec"
+                      : s.masteryLevel === "Intermediate"
+                      ? "#faf1e0"
+                      : "#f6e5e1",
+                }}
+              >
+                {s.masteryLevel}
+              </span>
+            </div>
             <div className="topic-meta">
               Avg hints: {s.avgHints} · Time ratio: {s.avgTimeRatio}x · Last
               practiced: {new Date(s.lastPracticed).toLocaleDateString()}

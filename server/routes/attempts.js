@@ -4,8 +4,13 @@ import Problem from "../models/Problem.js";
 import {
   calculateTopicScores,
   calculateStreak,
+  calculateReadinessScore,
+  calculateStreakWithTarget,
 } from "../utils/scoringEngine.js";
 import { explainRecommendation } from "../utils/explainRecommendation.js";
+import { reviewCode } from "../utils/reviewCode.js";
+import { generateQuiz } from "../utils/generateQuiz.js";
+import { explainWeakness } from "../utils/explainWeakness.js";
 
 const router = express.Router();
 
@@ -37,7 +42,23 @@ router.post("/", async (req, res) => {
     });
 
     await attempt.save();
-    res.status(201).json(attempt);
+
+    let conceptualFeedback = null;
+    if (hintsUsed >= 2) {
+      try {
+        conceptualFeedback = await explainWeakness({
+          topic: problem.topic,
+          difficulty: problem.difficulty,
+          hintsUsed,
+          timeTakenMinutes,
+          expectedTimeMinutes: problem.expectedTimeMinutes,
+        });
+      } catch (e) {
+        console.log("Weakness explanation failed (non-blocking):", e.message);
+      }
+    }
+
+    res.status(201).json({ ...attempt.toObject(), conceptualFeedback });
   } catch (e) {
     console.log(`SOMETHING WENT WRONG: ${e}`);
     res.status(500).json({ error: "Failed to save attempt" });
@@ -91,14 +112,93 @@ router.patch("/review/:topic", async (req, res) => {
   }
 });
 
-router.get("/streak", async (req, res) => {
+router.get("/streak-detailed", async (req, res) => {
   try {
+    const target = Number(req.query.target) || 1;
     const attempts = await Attempt.find({});
-    const streak = calculateStreak(attempts);
-    res.status(200).json({ streak });
+    const result = calculateStreakWithTarget(attempts, target);
+    res.status(200).json(result);
   } catch (e) {
     console.log(`SOMETHING WENT WRONG: ${e}`);
     res.status(500).json({ error: "Failed to calculate streak" });
+  }
+});
+
+router.post("/review-code", async (req, res) => {
+  const { code, topic, difficulty } = req.body;
+  if (!code || !topic) {
+    return res.status(400).json({ error: "Code and topic are required" });
+  }
+  try {
+    const result = await reviewCode(code, topic, difficulty || "Medium");
+    res.status(200).json(result);
+  } catch (e) {
+    console.log(`SOMETHING WENT WRONG: ${e}`);
+    res.status(500).json({ error: "Failed to review code" });
+  }
+});
+
+router.get("/quiz", async (req, res) => {
+  try {
+    const attempts = await Attempt.find({});
+    const scores = calculateTopicScores(attempts);
+    const weakTopics = scores.slice(0, 3).map((s) => s.topic);
+
+    if (weakTopics.length === 0) {
+      return res.status(400).json({ error: "Log some attempts first" });
+    }
+
+    const quiz = await generateQuiz(weakTopics);
+    res.status(200).json({ quiz, weakTopics });
+  } catch (e) {
+    console.log(`SOMETHING WENT WRONG: ${e}`);
+    res.status(500).json({ error: "Failed to generate quiz" });
+  }
+});
+
+router.get("/similar/:topic/:excludeId", async (req, res) => {
+  try {
+    const { topic, excludeId } = req.params;
+
+    const attemptedWell = await Attempt.find({
+      topic,
+      hintsUsed: { $lte: 1 },
+    }).distinct("problemId");
+
+    const similar = await Problem.find({
+      topic,
+      _id: { $ne: excludeId, $nin: attemptedWell },
+    }).limit(3);
+
+    res.status(200).json(similar);
+  } catch (e) {
+    console.log(`SOMETHING WENT WRONG: ${e}`);
+    res.status(500).json({ error: "Failed to fetch similar problems" });
+  }
+});
+
+router.get("/readiness", async (req, res) => {
+  try {
+    const attempts = await Attempt.find({});
+    const scores = calculateTopicScores(attempts);
+    const readiness = calculateReadinessScore(attempts, scores);
+    res.status(200).json(readiness);
+  } catch (e) {
+    console.log(`SOMETHING WENT WRONG: ${e}`);
+    res.status(500).json({ error: "Failed to calculate readiness" });
+  }
+});
+
+router.get("/today-count", async (req, res) => {
+  try {
+    const startOfDay = new Date();
+    startOfDay.setHours(0, 0, 0, 0);
+
+    const count = await Attempt.countDocuments({ date: { $gte: startOfDay } });
+    res.status(200).json({ count });
+  } catch (e) {
+    console.log(`SOMETHING WENT WRONG: ${e}`);
+    res.status(500).json({ error: "Failed to count today's attempts" });
   }
 });
 
